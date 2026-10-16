@@ -1,0 +1,267 @@
+{
+  "states": {
+    "TN": "Tamil Nadu (Chennai)",
+    "MH": "Maharashtra (Mumbai)",
+    "KA": "Karnataka (Bengaluru)"
+  },
+  "categories": {
+    "MED": {
+      "name": "Medicine",
+      "rho": 0.004,
+      "mode": "air",
+      "elasticity": -0.4,
+      "unmet_penalty": 150,
+      "downgrade_eligible": false
+    },
+    "ELEC": {
+      "name": "Electrical",
+      "rho": 0.005,
+      "mode": "air",
+      "elasticity": -1.2,
+      "unmet_penalty": 60,
+      "downgrade_eligible": true
+    },
+    "APP": {
+      "name": "Apparel",
+      "rho": 0.0078,
+      "mode": "ground",
+      "elasticity": -1.8,
+      "unmet_penalty": 10,
+      "downgrade_eligible": false
+    }
+  },
+  "downgrade": {
+    "category": "ELEC",
+    "to_mode": "ground",
+    "price_ratio": 0.51,
+    "rho": 0.005,
+    "max_share": 0.3
+  },
+  "defaults": {
+    "price_grid": [
+      0.9,
+      0.95,
+      1.0,
+      1.05,
+      1.1
+    ],
+    "min_fill": 0.6,
+    "min_margin_segment": 0.25,
+    "min_margin_lane": 0.25,
+    "allow_downgrade": true,
+    "allow_unmet": false
+  },
+  "routes": {
+    "TN-MH": {
+      "origin": "TN",
+      "dest": "MH",
+      "distance_km": 1330,
+      "price_factor": 1.0,
+      "typical_spend_cap": 200000,
+      "air_flights": {
+        "F1": {
+          "cap_w": 4500,
+          "cap_v": 28.0,
+          "var_cost": 30.0
+        },
+        "F2": {
+          "cap_w": 2000,
+          "cap_v": 10.0,
+          "var_cost": 30.0
+        }
+      },
+      "charter": {
+        "cap_w": 4000,
+        "cap_v": 20,
+        "fixed": 140000,
+        "var_cost": 0,
+        "available": 1
+      },
+      "trailers": {
+        "cap_w": 8000,
+        "cap_v": 40,
+        "owned": 1,
+        "owned_trip": 60000,
+        "rentable": 3,
+        "rent_trip": 67800,
+        "handling": 3.0
+      }
+    },
+    "MH-TN": {
+      "origin": "MH",
+      "dest": "TN",
+      "distance_km": 1330,
+      "price_factor": 1.0,
+      "typical_spend_cap": 200000,
+      "air_flights": {
+        "F1": {
+          "cap_w": 3800,
+          "cap_v": 23.8,
+          "var_cost": 30.0
+        },
+        "F2": {
+          "cap_w": 1700,
+          "cap_v": 8.5,
+          "var_cost": 30.0
+        }
+      },
+      "charter": {
+        "cap_w": 4000,
+        "cap_v": 20,
+        "fixed": 140000,
+        "var_cost": 0,
+        "available": 1
+      },
+      "trailers": {
+        "cap_w": 8000,
+        "cap_v": 40,
+        "owned": 1,
+        "owned_trip": 60000,
+        "rentable": 3,
+        "rent_trip": 67800,
+        "handling": 3.0
+      }
+    },
+    "TN-KA": {
+      "origin": "TN",
+      "dest": "KA",
+      "distance_km": 350,
+      "price_factor": 0.7,
+      "typical_spend_cap": 140000,
+      "air_flights": {
+        "F1": {
+          "cap_w": 2700,
+          "cap_v": 16.8,
+          "var_cost": 21.0
+        },
+        "F2": {
+          "cap_w": 1200,
+          "cap_v": 6.0,
+          "var_cost": 21.0
+        }
+      },
+      "charter": {
+        "cap_w": 4000,
+        "cap_v": 20,
+        "fixed": 80000,
+        "var_cost": 0,
+        "available": 1
+      },
+      "trailers": {
+        "cap_w": 8000,
+        "cap_v": 40,
+        "owned": 1,
+        "owned_trip": 22000,
+        "rentable": 3,
+        "rent_trip": 24900,
+        "handling": 2.1
+      }
+    },
+    "KA-TN": {
+      "origin": "KA",
+      "dest": "TN",
+      "distance_km": 350,
+      "price_factor": 0.7,
+      "typical_spend_cap": 140000,
+      "air_flights": {
+        "F1": {
+          "cap_w": 2500,
+          "cap_v": 15.4,
+          "var_cost": 21.0
+        },
+        "F2": {
+          "cap_w": 1100,
+          "cap_v": 5.5,
+          "var_cost": 21.0
+        }
+      },
+      "charter": {
+        "cap_w": 4000,
+        "cap_v": 20,
+        "fixed": 80000,
+        "var_cost": 0,
+        "available": 1
+      },
+      "trailers": {
+        "cap_w": 8000,
+        "cap_v": 40,
+        "owned": 1,
+        "owned_trip": 22000,
+        "rentable": 3,
+        "rent_trip": 24900,
+        "handling": 2.1
+      }
+    },
+    "MH-KA": {
+      "origin": "MH",
+      "dest": "KA",
+      "distance_km": 980,
+      "price_factor": 0.9,
+      "typical_spend_cap": 180000,
+      "air_flights": {
+        "F1": {
+          "cap_w": 3150,
+          "cap_v": 19.6,
+          "var_cost": 27.0
+        },
+        "F2": {
+          "cap_w": 1400,
+          "cap_v": 7.0,
+          "var_cost": 27.0
+        }
+      },
+      "charter": {
+        "cap_w": 4000,
+        "cap_v": 20,
+        "fixed": 120000,
+        "var_cost": 0,
+        "available": 1
+      },
+      "trailers": {
+        "cap_w": 8000,
+        "cap_v": 40,
+        "owned": 1,
+        "owned_trip": 44000,
+        "rentable": 3,
+        "rent_trip": 49700,
+        "handling": 2.7
+      }
+    },
+    "KA-MH": {
+      "origin": "KA",
+      "dest": "MH",
+      "distance_km": 980,
+      "price_factor": 0.9,
+      "typical_spend_cap": 180000,
+      "air_flights": {
+        "F1": {
+          "cap_w": 2900,
+          "cap_v": 18.2,
+          "var_cost": 27.0
+        },
+        "F2": {
+          "cap_w": 1300,
+          "cap_v": 6.5,
+          "var_cost": 27.0
+        }
+      },
+      "charter": {
+        "cap_w": 4000,
+        "cap_v": 20,
+        "fixed": 120000,
+        "var_cost": 0,
+        "available": 1
+      },
+      "trailers": {
+        "cap_w": 8000,
+        "cap_v": 40,
+        "owned": 1,
+        "owned_trip": 44000,
+        "rentable": 3,
+        "rent_trip": 49700,
+        "handling": 2.7
+      }
+    }
+  },
+  "note": "All costs, capacities and elasticities are illustrative assumptions."
+}

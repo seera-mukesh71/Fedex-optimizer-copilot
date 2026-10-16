@@ -1,0 +1,8 @@
+# core: data, optimizer, XGBoost forecasting, dashboard, LLM client
+numpy>=1.26
+pandas>=2.0
+ortools>=9.9
+xgboost>=2.0
+streamlit>=1.50
+python-dotenv>=1.0
+groq>=0.9
